@@ -1,0 +1,30 @@
+.card {
+  height: 250px;
+  width: 275px;
+  background-color: #151515;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  border-top: 5px solid white;
+  border-bottom: 5px solid white;
+}
+.card:hover {
+  cursor: pointer;
+}
+.top-card {
+  height: 70%;
+}
+.bottom-card {
+  display: flex;
+  flex-direction: row;
+  height: 30%;
+  padding: 0.25rem;
+}
+.bottom-left {
+  width: 90%;
+  line-height: 10px;
+}
+.bottom-right {
+  width: 10%;
+  color: white;
+}

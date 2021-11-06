@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap");
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #151515;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 15px;
+  border-bottom: 5px solid white;
+}
+.logo {
+  width: 33px;
+  height: 33px;
+}
+.left {
+  width: 40%;
+  justify-content: space-around;
+}
+.left,
+.right {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+.right {
+  width: 10%;
+  justify-content: space-around;
+}
+span .icons {
+  font-size: x-small;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
