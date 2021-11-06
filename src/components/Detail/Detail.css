@@ -9,16 +9,69 @@
   font-family: "Open Sans Condensed", sans-serif;
 }
 .deets-left {
-  /* border: 1px solid red; */
   width: 40%;
   display: flex;
   flex-direction: column;
+  align-items: stretch;
+  opacity: 85%;
+}
+.deets-left h1 {
+  color: white;
 }
 .deets-right {
   width: 60%;
   height: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   color: white;
-  /* border: 1px solid blue; */
+  justify-content: space-evenly;
+}
+
+.deets-right .top-row {
+  display: flex;
+  width: 90%;
+  height: 20vh;
+}
+.top-row .left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 70%;
+}
+.top-row .right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 30%;
+}
+.top-row .right h1 {
+  color: lightgrey;
+  font-size: 45px;
+}
+.stats-row {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 90%;
+  height: 20vh;
+  background-color: grey;
+}
+.stats-row .top,
+.stats-row .bottom {
+  display: flex;
+  justify-content: space-evenly;
+}
+.demographics {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+}
+.category,
+.player-info {
+  width: 100%;
+  font-size: 20px;
+}
+.category {
+  color: gray;
 }

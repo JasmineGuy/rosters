@@ -4,9 +4,10 @@ import axios from "axios";
 import { useLocation } from "react-router-dom";
 
 const Detail = () => {
-  const [stats, setStats] = useState();
   const [playerData, setPlayerData] = useState();
   const [playerId, setPlayerId] = useState();
+  const [playerDemo, setPlayerDemo] = useState();
+
   const location = useLocation();
 
   useEffect(() => {
@@ -27,14 +28,29 @@ const Detail = () => {
 
     if (allStats) {
       const foundMatch = allStats.find((stat) => stat.pid === playerId);
-      console.log("FOUND: ", foundMatch);
       setPlayerData(foundMatch);
     }
   };
 
+  const getDemographics = async () => {
+    let allDemos;
+    await axios
+      .get(
+        "https://data.nba.com/data/5s/v2015/json/mobile_teams/nba/2021/teams/nets_roster.json"
+      )
+      .then((res) => {
+        allDemos = res.data.t.pl;
+      });
+
+    if (allDemos) {
+      const demo = allDemos.filter((x) => x.pid === Number(playerId));
+      setPlayerDemo(demo[0]);
+    }
+  };
   useEffect(() => {
     if (playerId) {
       getStats();
+      getDemographics();
     }
   }, [playerId]);
 
@@ -45,16 +61,54 @@ const Detail = () => {
           alt="player"
           src={`https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/${playerId}.png`}
         />
+        <h1>FULL BIO</h1>
       </div>
       <div className="deets-right">
         {!playerData ? (
           "Loading"
         ) : (
           <>
-            <h1>
-              {playerData.fn} {playerData.ln}
-            </h1>
-            <h3>{playerData.pos}</h3>
+            <div className="top-row">
+              <div className="left">
+                <h1>
+                  {playerData.fn} {playerData.ln}
+                </h1>
+                <h3>{playerData.pos}</h3>
+              </div>
+              <div className="right">
+                <h1>{playerDemo.num}</h1>
+              </div>
+            </div>
+            <div className="stats-row">
+              <div className="top">
+                <h3>GAMES</h3>
+                <h3>PPG</h3>
+                <h3>RPG</h3>
+                <h3>STL</h3>
+              </div>
+              <div className="bottom">
+                <h3>{playerData.tot.gp}</h3>
+                <h3>{playerData.avg.pts}</h3>
+                <h3>{playerData.avg.reb}</h3>
+                <h3>{playerData.avg.stl}</h3>
+              </div>
+            </div>
+            <div className="demographics">
+              <div className="category">
+                <p>Height:</p>
+                <p>Weight:</p>
+                <p>DOB:</p>
+                <p>Prior to NBA:</p>
+                <p>Years Pro:</p>
+              </div>
+              <div className="player-info">
+                <p>{playerDemo.ht}</p>
+                <p>{playerDemo.wt}</p>
+                <p>{playerDemo.dob}:</p>
+                <p>{playerDemo.hcc}</p>
+                <p>{playerDemo.y}</p>
+              </div>
+            </div>
           </>
         )}
       </div>

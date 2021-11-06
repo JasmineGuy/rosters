@@ -8,7 +8,6 @@ const Card = ({ id, first, last, pos, num }) => {
 
   const handleClick = (id) => {
     history.push(`/details?id=${id}`);
-    // history.push(`/properties?id=${category}`);
   };
   return (
     <div className="card" onClick={() => handleClick(id)}>
