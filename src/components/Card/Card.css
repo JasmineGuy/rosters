@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 .card {
   height: 250px;
   width: 275px;
@@ -27,4 +28,7 @@
 .bottom-right {
   width: 10%;
   color: white;
+}
+.gray {
+  color: gray;
 }

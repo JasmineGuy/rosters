@@ -6,6 +6,17 @@ import "./Card.css";
 const Card = ({ id, first, last, pos, num }) => {
   let history = useHistory();
 
+  const positionMap = {
+    F: "Forward",
+    "C-F": "Center-Forward",
+    "G-F": "Guard-Forward",
+    G: "Guard",
+    "F-C": "Forward-Center",
+  };
+  const renderPosition = (position) => {
+    return positionMap[position];
+  };
+
   const handleClick = (id) => {
     history.push(`/details?id=${id}`);
   };
@@ -22,7 +33,7 @@ const Card = ({ id, first, last, pos, num }) => {
           <h3 className="name">
             {first} {last}
           </h3>
-          <p>{pos}</p>
+          <p className="gray">{renderPosition(pos)}</p>
         </div>
         <div className="bottom-right">
           <h1>{num}</h1>

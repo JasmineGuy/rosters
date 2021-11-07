@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 
 .details {
   height: 90vh;
@@ -17,6 +18,7 @@
 }
 .deets-left h1 {
   color: white;
+  font-family: "Bebas Neue", cursive;
 }
 .deets-right {
   width: 60%;
@@ -26,12 +28,13 @@
   align-items: center;
   color: white;
   justify-content: space-evenly;
+  font-family: "Bebas Neue", cursive;
 }
 
 .deets-right .top-row {
   display: flex;
-  width: 90%;
-  height: 20vh;
+  width: 95%;
+  height: 10vh;
 }
 .top-row .left {
   display: flex;
@@ -44,6 +47,7 @@
   flex-direction: column;
   align-items: flex-end;
   width: 30%;
+  margin: 1rem;
 }
 .top-row .right h1 {
   color: lightgrey;
@@ -51,21 +55,28 @@
 }
 .stats-row {
   display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  width: 90%;
-  height: 20vh;
+  justify-content: space-around;
+  width: 85%;
+  height: 10vh;
   background-color: grey;
+  padding: 1rem;
 }
-.stats-row .top,
-.stats-row .bottom {
-  display: flex;
-  justify-content: space-evenly;
-}
+
 .demographics {
   display: flex;
   justify-content: space-between;
-  width: 90%;
+  align-items: center;
+  width: 95%;
+}
+.quar-1,
+.quar-2,
+.quar-3,
+.quar-4 {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .category,
 .player-info {
@@ -74,4 +85,24 @@
 }
 .category {
   color: gray;
+}
+@media (max-width: 700px) {
+  .details {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  .deets-left,
+  .deets-right {
+    width: 90%;
+  }
+  .demographics {
+    font-size: 10px;
+  }
+  .top-row .left {
+    height: 15vh;
+  }
+  .top-row .left h3 {
+    padding-bottom: 1rem;
+  }
 }

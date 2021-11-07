@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 
 .splash {
   width: 100%;
@@ -13,14 +14,58 @@
   flex-direction: column;
   align-items: center;
   width: 45%;
-  font-family: "Open Sans Condensed", sans-serif;
+  font-family: "Bebas Neue", cursive;
   color: white;
-  font-weight: bolder;
+  line-height: 0.25rem;
+}
+.left-splash .title {
+  font-size: 60px;
+}
+.left-splash .game {
+  font-size: 25px;
+  text-align: left;
 }
 .right-splash {
   width: 55%;
   display: flex;
   background-image: url("https://www.nba.com/nets/sites/nets/files/getty-images-1236262718.jpg");
+  background-repeat: no-repeat;
   height: 100%;
   opacity: 70%;
+}
+
+.buttons {
+  width: 60%;
+  display: flex;
+  align-items: center;
+}
+.buttons button {
+  width: 175px;
+  height: 48px;
+  border-radius: 10px;
+  border: transparent;
+  margin: 0.5rem;
+  font-weight: bold;
+}
+button:hover {
+  cursor: pointer;
+}
+.buy {
+  background-color: #00aeef;
+  color: white;
+}
+.schedule {
+  background-color: white;
+  color: #00aeef;
+}
+@media (max-width: 700px) {
+  .splash {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .left-splash,
+  .right-splash {
+    width: 100vw;
+    height: 50%;
+  }
 }

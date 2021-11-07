@@ -2,13 +2,21 @@ import React, { useState, useEffect } from "react";
 import "./Detail.css";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
+import Skeleton from "react-loading-skeleton";
 
 const Detail = () => {
   const [playerData, setPlayerData] = useState();
   const [playerId, setPlayerId] = useState();
   const [playerDemo, setPlayerDemo] = useState();
-
   const location = useLocation();
+
+  const positionMap = {
+    F: "Forward",
+    "C-F": "Center-Forward",
+    "G-F": "Guard-Forward",
+    G: "Guard",
+    "F-C": "Forward-Center",
+  };
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);
@@ -54,6 +62,10 @@ const Detail = () => {
     }
   }, [playerId]);
 
+  const renderPosition = (position) => {
+    return positionMap[position];
+  };
+
   return (
     <div className="details">
       <div className="deets-left">
@@ -61,11 +73,10 @@ const Detail = () => {
           alt="player"
           src={`https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/${playerId}.png`}
         />
-        <h1>FULL BIO</h1>
       </div>
       <div className="deets-right">
-        {!playerData ? (
-          "Loading"
+        {!playerData || !playerDemo ? (
+          <Skeleton />
         ) : (
           <>
             <div className="top-row">
@@ -73,23 +84,27 @@ const Detail = () => {
                 <h1>
                   {playerData.fn} {playerData.ln}
                 </h1>
-                <h3>{playerData.pos}</h3>
+                <h3>{renderPosition(playerData.pos)}</h3>
               </div>
               <div className="right">
                 <h1>{playerDemo.num}</h1>
               </div>
             </div>
             <div className="stats-row">
-              <div className="top">
+              <div className="quar-1">
                 <h3>GAMES</h3>
-                <h3>PPG</h3>
-                <h3>RPG</h3>
-                <h3>STL</h3>
-              </div>
-              <div className="bottom">
                 <h3>{playerData.tot.gp}</h3>
+              </div>
+              <div className="quar-2">
+                <h3>PPG</h3>
                 <h3>{playerData.avg.pts}</h3>
+              </div>
+              <div className="quar-3">
+                <h3>RPG</h3>
                 <h3>{playerData.avg.reb}</h3>
+              </div>
+              <div className="quar-4">
+                <h3>STL</h3>
                 <h3>{playerData.avg.stl}</h3>
               </div>
             </div>
@@ -104,7 +119,7 @@ const Detail = () => {
               <div className="player-info">
                 <p>{playerDemo.ht}</p>
                 <p>{playerDemo.wt}</p>
-                <p>{playerDemo.dob}:</p>
+                <p>{playerDemo.dob}</p>
                 <p>{playerDemo.hcc}</p>
                 <p>{playerDemo.y}</p>
               </div>

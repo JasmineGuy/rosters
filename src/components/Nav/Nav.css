@@ -1,11 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 
 .nav-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: #151515;
-  font-family: "Open Sans Condensed", sans-serif;
+  /* font-family: "Open Sans Condensed", sans-serif; */
+  font-family: "Bebas Neue", cursive;
+
   font-size: 15px;
   border-bottom: 5px solid white;
 }

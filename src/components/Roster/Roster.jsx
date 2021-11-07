@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Card from "../Card/Card";
 import "./Roster.css";
 import axios from "axios";
+import Skeleton from "react-loading-skeleton";
 
 const Roster = () => {
   const [roster, setRoster] = useState();
@@ -20,18 +21,20 @@ const Roster = () => {
     <div className="roster">
       <h1>BROOKLYN NETS ROSTER</h1>
       <div className="player-container">
-        {roster && roster.length
-          ? roster.map((player, index) => (
-              <Card
-                key={index}
-                id={player.pid}
-                first={player.fn}
-                last={player.ln}
-                pos={player.pos}
-                num={player.num}
-              />
-            ))
-          : "Loading"}
+        {roster && roster.length ? (
+          roster.map((player, index) => (
+            <Card
+              key={index}
+              id={player.pid}
+              first={player.fn}
+              last={player.ln}
+              pos={player.pos}
+              num={player.num}
+            />
+          ))
+        ) : (
+          <Skeleton />
+        )}
       </div>
     </div>
   );
