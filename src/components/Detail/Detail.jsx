@@ -60,6 +60,7 @@ const Detail = () => {
       getStats();
       getDemographics();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [playerId]);
 
   const renderPosition = (position) => {

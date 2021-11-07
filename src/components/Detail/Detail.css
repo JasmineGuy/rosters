@@ -7,6 +7,7 @@
   background-color: #151515;
   display: flex;
   align-items: center;
+  justify-content: center;
   font-family: "Open Sans Condensed", sans-serif;
 }
 .deets-left {
@@ -40,7 +41,10 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: center;
   width: 70%;
+  line-height: 0rem;
+  padding: 0.5rem;
 }
 .top-row .right {
   display: flex;
@@ -56,7 +60,7 @@
 .stats-row {
   display: flex;
   justify-content: space-around;
-  width: 85%;
+  width: 90%;
   height: 10vh;
   background-color: grey;
   padding: 1rem;
@@ -82,6 +86,7 @@
 .player-info {
   width: 100%;
   font-size: 20px;
+  padding: 0.5rem;
 }
 .category {
   color: gray;

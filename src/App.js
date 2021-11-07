@@ -2,7 +2,7 @@ import { Switch, Route } from "react-router-dom";
 import Home from "./components/Home/Home";
 import Nav from "./components/Nav/Nav";
 import Roster from "./components/Roster/Roster";
-import Card from "./components/Card/Card";
+
 import Detail from "./components/Detail/Detail";
 import "./App.css";
 

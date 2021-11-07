@@ -28,7 +28,6 @@ const Home = () => {
         </div>
         <div className="right-splash"></div>
       </div>
-      <div></div>
     </div>
   );
 };

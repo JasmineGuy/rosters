@@ -35,13 +35,13 @@
 }
 
 .buttons {
-  width: 60%;
+  width: 50%;
   display: flex;
   align-items: center;
 }
 .buttons button {
-  width: 175px;
-  height: 48px;
+  width: 10vw;
+  height: 5vh;
   border-radius: 10px;
   border: transparent;
   margin: 0.5rem;
@@ -58,7 +58,8 @@ button:hover {
   background-color: white;
   color: #00aeef;
 }
-@media (max-width: 700px) {
+
+@media (max-width: 860px) {
   .splash {
     display: flex;
     flex-direction: column-reverse;
@@ -67,5 +68,14 @@ button:hover {
   .right-splash {
     width: 100vw;
     height: 50%;
+  }
+  .buttons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .buttons button {
+    width: 25vw;
+    height: 7vh;
   }
 }
