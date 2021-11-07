@@ -1,7 +1,17 @@
-import React from "react";
+// import axios from "axios";
+// import React, { useEffect } from "react";
 import "./Home.css";
 
 const Home = () => {
+  // useEffect(() => {
+  //   axios
+  //     .get(
+  //       "https://www.nba.com/nets/api/1.1/json/?type=story+OR+photo_gallery+OR+video&amp;players=Durant,+Kevin"
+  //     )
+  //     .then((res) => {
+  //       console.log(res.data);
+  //     });
+  // }, []);
   return (
     <div className="home">
       <div className="splash">

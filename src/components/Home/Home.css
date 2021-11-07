@@ -69,6 +69,10 @@ button:hover {
     width: 100vw;
     height: 50%;
   }
+  .left-splash .title {
+    padding: 2rem;
+  }
+
   .buttons {
     width: 100%;
     display: flex;
